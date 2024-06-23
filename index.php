@@ -47,20 +47,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container-md pt-5">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome Hotel</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parcheggio</th>
+      <th scope="col">Valutazione</th>
+      <th scope="col">Distanza dal centro</th>
+    </tr>
+  </thead>
+  <tbody>
     <?php foreach($hotels as $hotel) {?>
-        <h2> <?php echo $hotel['name'];?> </h2>
-        <h4> <?php echo $hotel['description'];?> </h4>
-        <h4> <?php echo $hotel['parking'];?> </h4>
-        <h4> <?php echo $hotel['vote'];?> </h4>
-        <h4> <?php echo $hotel['distance_to_center'];?> </h4>
-        <hr>
-
-
-
-
-    <?php } ?>
+        
+        
+    <tr>
+      <th scope="row"><?php echo $hotel['name'];?></th>
+      <td><?php echo $hotel['description'];?></td>
+      <td><?php echo $hotel['parking'];?> </td>
+      <td><?php echo $hotel['vote'];?></td>
+      <td><?php echo $hotel['distance_to_center'];?></td>
+    </tr>
     
+    <?php } ?>
+    </tbody>
+</table>
+    </div>
 </body>
 </html>
