@@ -47,36 +47,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- IMPORT BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-md pt-5">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nome Hotel</th>
-      <th scope="col">Descrizione</th>
-      <th scope="col">Parcheggio</th>
-      <th scope="col">Valutazione</th>
-      <th scope="col">Distanza dal centro</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach($hotels as $hotel) {?>
-        
-        
-    <tr>
-      <th scope="row"><?php echo $hotel['name'];?></th>
-      <td><?php echo $hotel['description'];?></td>
-      <td><?php echo $hotel['parking'];?> </td>
-      <td><?php echo $hotel['vote'];?></td>
-      <td><?php echo $hotel['distance_to_center'];?></td>
-    </tr>
-    
-    <?php } ?>
-    </tbody>
-</table>
-    </div>
+<div class="container-md pt-5">
+    <h1 class="text-center mb-5">Tabella di hotel</h1>
+    <!-- TABELLA HOTEL -->
+    <table class="table ">
+        <thead>
+            <!-- INTESTAZIONE TABELLA -->
+            <tr>
+            <th scope="col">Nome Hotel</th>
+            <th scope="col">Descrizione</th>
+            <th scope="col">Parcheggio</th>
+            <th scope="col">Valutazione</th>
+            <th scope="col">Distanza dal centro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- INIZIO FOREACH -->
+            <?php foreach($hotels as $hotel) {?> 
+            <tr>
+                <!-- NOME HOTEL -->
+                <th scope="row"><?php echo $hotel['name'];?></th>
+                <!-- DESCRIZIONE HOTEL -->
+                <td><?php echo $hotel['description'];?></td>
+                <!-- PARCHEGGIO HOTEL CON CONDIZIONE  -->
+                <td><?php if($hotel['parking']) {echo '&checkmark;';}else{echo '&cross;';} ;?> </td>
+                <!-- VOTO HOTEL -->
+                <td><?php echo $hotel['vote'];?></td>
+                <!-- DISTANZA DAL CENTRO DELL'HOTEL -->
+                <td><?php echo $hotel['distance_to_center'];?></td>
+            </tr>
+            <?php } ?><!--FINE FOREACH-->
+        </tbody>
+    </table>
+
+</div>
 </body>
 </html>
