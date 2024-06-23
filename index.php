@@ -49,7 +49,18 @@
     <title>Document</title>
 </head>
 <body>
-    <?php foreach($hotels as $hotel)  echo $hotel['name']  ?>
+    <?php foreach($hotels as $hotel) {?>
+        <h2> <?php echo $hotel['name'];?> </h2>
+        <h4> <?php echo $hotel['description'];?> </h4>
+        <h4> <?php echo $hotel['parking'];?> </h4>
+        <h4> <?php echo $hotel['vote'];?> </h4>
+        <h4> <?php echo $hotel['distance_to_center'];?> </h4>
+        <hr>
+
+
+
+
+    <?php } ?>
     
 </body>
 </html>
